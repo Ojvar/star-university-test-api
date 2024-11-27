@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+app.use(express.static("public"));
+
 // 1. Get list of all courses
 app.get('/api/courses', (req, res) => {
     res.json([
