@@ -90,3 +90,5 @@ app.get('/api/classes', (req, res) => {
 app.listen(PORT, () => {
     console.log(`University API server running at http://localhost:${PORT}`);
 });
+
+module.exports = app;
