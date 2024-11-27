@@ -5,7 +5,7 @@ const PORT = 3000;
 app.use(express.static("public"));
 
 // 1. Get list of all courses
-app.get('/api/courses', (req, res) => {
+app.get('/courses', (req, res) => {
     res.json([
         { id: 1, name: 'Computer Science 101', credits: 3 },
         { id: 2, name: 'Mathematics 201', credits: 4 },
@@ -14,7 +14,7 @@ app.get('/api/courses', (req, res) => {
 });
 
 // 2. Get details of a specific course by ID
-app.get('/api/courses/:id', (req, res) => {
+app.get('/courses/:id', (req, res) => {
     const courseId = parseInt(req.params.id);
     const courses = [
         { id: 1, name: 'Computer Science 101', credits: 3 },
@@ -30,7 +30,7 @@ app.get('/api/courses/:id', (req, res) => {
 });
 
 // 3. Get list of all students
-app.get('/api/students', (req, res) => {
+app.get('/students', (req, res) => {
     res.json([
         { id: 1, name: 'Alice Johnson', major: 'Computer Science' },
         { id: 2, name: 'Bob Smith', major: 'Mathematics' },
@@ -39,7 +39,7 @@ app.get('/api/students', (req, res) => {
 });
 
 // 4. Get details of a specific student by ID
-app.get('/api/students/:id', (req, res) => {
+app.get('/students/:id', (req, res) => {
     const studentId = parseInt(req.params.id);
     const students = [
         { id: 1, name: 'Alice Johnson', major: 'Computer Science' },
@@ -55,7 +55,7 @@ app.get('/api/students/:id', (req, res) => {
 });
 
 // 5. Get list of faculty members
-app.get('/api/faculty', (req, res) => {
+app.get('/faculty', (req, res) => {
     res.json([
         { id: 1, name: 'Dr. Smith', department: 'Computer Science' },
         { id: 2, name: 'Dr. Jones', department: 'Mathematics' },
@@ -64,7 +64,7 @@ app.get('/api/faculty', (req, res) => {
 });
 
 // 6. Get details of a specific faculty member by ID
-app.get('/api/faculty/:id', (req, res) => {
+app.get('/faculty/:id', (req, res) => {
     const facultyId = parseInt(req.params.id);
     const faculty = [
         { id: 1, name: 'Dr. Smith', department: 'Computer Science' },
@@ -80,7 +80,7 @@ app.get('/api/faculty/:id', (req, res) => {
 });
 
 // 7. Get a list of classes being taught in a given semester
-app.get('/api/classes', (req, res) => {
+app.get('/classes', (req, res) => {
     res.json([
         { id: 1, course: 'Computer Science 101', faculty: 'Dr. Smith', semester: 'Fall 2024' },
         { id: 2, course: 'Mathematics 201', faculty: 'Dr. Jones', semester: 'Fall 2024' },
